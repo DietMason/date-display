@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Date</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            font-size: 5rem;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div id="date"></div>
+    <script>
+        function updateDate() {
+            let now = new Date();
+            let formattedDate = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear().toString().slice(-2);
+            document.getElementById("date").innerText = formattedDate;
+        }
+        updateDate();
+        setInterval(updateDate, 1000 * 60 * 60); // Update every hour
+    </script>
+</body>
+</html>

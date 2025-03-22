@@ -11,7 +11,7 @@
             align-items: center;
             height: 100vh;
             font-family: Arial, sans-serif;
-            font-size: 5rem;
+            font-size: 6rem;
             background-color: #f4f4f4;
         }
     </style>
@@ -21,7 +21,10 @@
     <script>
         function updateDate() {
             let now = new Date();
-            let formattedDate = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear().toString().slice(-2);
+            let month = (now.getMonth() + 1).toString().padStart(2, '0');
+            let day = now.getDate().toString().padStart(2, '0');
+            let year = now.getFullYear().toString().slice(-2);
+            let formattedDate = `${month}/${day}/${year}`;
             document.getElementById("date").innerText = formattedDate;
         }
         updateDate();
